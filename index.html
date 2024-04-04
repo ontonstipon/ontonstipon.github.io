@@ -32,10 +32,22 @@
 <body>
     <div class="container">
         <div class="image-container">
-            <img srcset="img/company_icon_screen.png 16w, img/company_icon.png 1w"
-                 sizes="(orientation: portrait) 100vw, (orientation: landscape) 100vw"
-                 alt="Onton&amp;Stipon" title="Onton&amp;Stipon">
+            <img id="companyIcon" src="company_icon_screen.png" alt="Onton&amp;Stipon" title="Onton&amp;Stipon">
         </div>
     </div>
+
+    <script>
+        function updateImage() {
+            var image = document.getElementById('companyIcon');
+            if (window.matchMedia("(orientation: portrait)").matches) {
+                image.src = 'company_icon.png';
+            } else {
+                image.src = 'company_icon_screen.png';
+            }
+        }
+
+        window.addEventListener('resize', updateImage);
+        updateImage(); // Вызываем функцию сразу для первоначальной установки изображения
+    </script>
 </body>
 </html>
