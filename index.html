@@ -1,53 +1,59 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Onton&amp;Stipon</title>
     <style>
-        body, html {
-            margin: 0;
-            padding: 0;
-            height: 100%;
-        }
-        .container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100%;
-        }
-        .image-container {
-            max-width: 100%;
-            max-height: 100%;
-            overflow: hidden;
-        }
-        .image-container img {
-            display: block;
-            margin: auto;
-            max-width: 100%;
-            max-height: 100%;
-        }
+      body,
+      html {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+      }
+      .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+      }
+      .image-container {
+        max-width: 100%;
+        max-height: 100%;
+        overflow: hidden;
+      }
+      .image-container img {
+        display: block;
+        margin: auto;
+        max-width: 100%;
+        max-height: 100%;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <div class="container">
-        <div class="image-container">
-            <img id="companyIcon" src="company_icon_screen.png" alt="Onton&amp;Stipon" title="Onton&amp;Stipon">
-        </div>
+      <div class="image-container">
+        <img
+          id="companyIcon"
+          src="img/company_icon_screen.png"
+          alt="Onton&amp;Stipon"
+          title="Onton&amp;Stipon"
+        />
+      </div>
     </div>
 
     <script>
-        function updateImage() {
-            var image = document.getElementById('companyIcon');
-            if (window.matchMedia("(orientation: portrait)").matches) {
-                image.src = 'company_icon.png';
-            } else {
-                image.src = 'company_icon_screen.png';
-            }
+      function updateImage() {
+        var image = document.getElementById("companyIcon");
+        if (window.matchMedia("(orientation: portrait)").matches) {
+          image.src = "img/company_icon.png";
+        } else {
+          image.src = "img/company_icon_screen.png";
         }
+      }
 
-        window.addEventListener('resize', updateImage);
-        updateImage(); // Вызываем функцию сразу для первоначальной установки изображения
+      window.addEventListener("resize", updateImage);
+      updateImage(); // Вызываем функцию сразу для первоначальной установки изображения
     </script>
-</body>
+  </body>
 </html>
