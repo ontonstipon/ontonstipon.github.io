@@ -5,17 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Onton&amp;Stipon</title>
     <style>
-      body,
-      html {
+      html,
+      body {
         margin: 0;
         padding: 0;
-        height: 100%;
+        color: #000;
+        font-family:
+          ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+          "Liberation Mono", "Courier New", monospace;
       }
-      .container {
+      .hero {
+        min-height: 100vh;
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 100%;
       }
       .image-container {
         max-width: 100%;
@@ -28,10 +31,41 @@
         max-width: 100%;
         max-height: 100%;
       }
+      .links {
+        padding: 2rem 3rem;
+        display: flex;
+        justify-content: center;
+      }
+      .links nav {
+        width: 100%;
+        max-width: 100ch;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 1rem 2rem;
+      }
+      .links a {
+        flex: 0 0 auto;
+        display: inline-flex;
+        white-space: nowrap;
+        text-decoration: none;
+        color: #000;
+        font-size: 1rem;
+        line-height: 1.4;
+      }
+      .links a:hover {
+        opacity: 0.5;
+      }
+      @media (orientation: portrait) {
+        .links nav {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+      }
     </style>
   </head>
   <body>
-    <div class="container">
+    <section class="hero">
       <div class="image-container">
         <img
           id="companyIcon"
@@ -40,11 +74,30 @@
           title="Onton&amp;Stipon"
         />
       </div>
-    </div>
-
+    </section>
+    <section class="links">
+      <nav>
+        <a href="https://ontonstipon.github.io/privacy.html">
+          Privacy Policy
+        </a>
+        <a href="https://play.google.com/store/apps/dev?id=5215567674382503368">
+          Google Play
+        </a>
+        <a
+          href="https://play.google.com/store/apps/details?id=com.ontonstipon.WarpRailStarRailWishSim"
+        >
+          Honkai Wish Simulator
+        </a>
+        <a
+          href="https://play.google.com/store/apps/details?id=com.onton.casesim"
+        >
+          Standoff Case Simulator
+        </a>
+      </nav>
+    </section>
     <script>
       function updateImage() {
-        var image = document.getElementById("companyIcon");
+        const image = document.getElementById("companyIcon");
         if (window.matchMedia("(orientation: portrait)").matches) {
           image.src = "img/company_icon.png";
         } else {
@@ -53,7 +106,7 @@
       }
 
       window.addEventListener("resize", updateImage);
-      updateImage(); // Вызываем функцию сразу для первоначальной установки изображения
+      updateImage();
     </script>
   </body>
 </html>
